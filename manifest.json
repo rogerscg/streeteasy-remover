@@ -1,0 +1,20 @@
+{
+  "name": "StreetEasy Remover",
+  "description": "Allows users to remove StreetEasy listings and buildings",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.streeteasy.com/*"],
+      "css": ["contentStyles.css"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
